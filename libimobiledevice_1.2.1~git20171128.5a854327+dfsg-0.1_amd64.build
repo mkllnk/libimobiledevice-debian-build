@@ -1,0 +1,640 @@
+ dpkg-buildpackage -rfakeroot -us -uc -b
+dpkg-buildpackage: info: source package libimobiledevice
+dpkg-buildpackage: info: source version 1.2.1~git20171128.5a854327+dfsg-0.1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Yves-Alexis Perez <corsac@debian.org>
+ dpkg-source --before-build libimobiledevice-1.2.1
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --with=python2 --dbgsym-migration=libimobiledevice6-dbg
+   dh_testdir -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_auto_clean -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_autoreconf_clean -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_clean -O--dbgsym-migration=libimobiledevice6-dbg
+ debian/rules build
+dh build --with=python2 --dbgsym-migration=libimobiledevice6-dbg
+   dh_testdir -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_update_autotools_config -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_autoreconf -O--dbgsym-migration=libimobiledevice6-dbg
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure.ac:31: installing './compile'
+configure.ac:6: installing './missing'
+common/Makefile.am: installing './depcomp'
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+dh_auto_configure -- --prefix=/usr --sysconfdir=/etc --enable-dev-tools --disable-openssl --disable-silent-rules
+	./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --libexecdir=\${prefix}/lib/x86_64-linux-gnu --disable-maintainer-mode --disable-dependency-tracking --prefix=/usr --sysconfdir=/etc --enable-dev-tools --disable-openssl --disable-silent-rules
+configure: WARNING: unrecognized options: --disable-maintainer-mode, --enable-dev-tools
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... none
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... none
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for libusbmuxd... yes
+checking for libplist... yes
+checking for libplistmm... yes
+checking for ANSI C header files... (cached) yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking gcrypt.h usability... yes
+checking gcrypt.h presence... yes
+checking for gcrypt.h... yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking for ssize_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint8_t... yes
+checking for asprintf... yes
+checking for strcasecmp... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strndup... yes
+checking for stpcpy... yes
+checking for vasprintf... yes
+checking endian.h usability... yes
+checking endian.h presence... yes
+checking for endian.h... yes
+checking whether we need platform-specific build settings... yes
+checking whether gcc is Clang... no
+checking whether pthreads work with -pthread... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking whether more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+checking for pthread_once in -lpthread... yes
+checking for a Python interpreter with version >= 2.3... python
+checking for python... /usr/bin/python
+checking for python version... 2.7
+checking for python platform... linux2
+checking for python script directory... ${prefix}/lib/python2.7/dist-packages
+checking for python extension module directory... ${exec_prefix}/lib/python2.7/dist-packages
+checking for cython... /usr/bin/cython
+checking for Cython version... 0.25.2
+configure: Cython executable is '/usr/bin/cython'
+checking for python2.7... (cached) /usr/bin/python
+checking for a version of Python >= '2.1.0'... yes
+checking for the distutils Python package... yes
+checking for Python include path... /usr/bin/python-config is /usr/bin/python-config
+-I/usr/include/python2.7 -I/usr/include/x86_64-linux-gnu/python2.7
+checking for Python library path... /usr/bin/python-config is /usr/bin/python-config
+-L/usr/lib/python2.7/config-x86_64-linux-gnu -L/usr/lib -lpython2.7 -lpthread -ldl  -lutil -lm  -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions
+checking for Python site-packages path... /usr/lib/python2.7/dist-packages
+checking python extra libraries... ('-L/usr/lib -lz', '-lpthread -ldl  -lutil')
+checking python extra linking flags... -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions
+checking consistency of all components of python development environment... yes
+checking for libplist Cython bindings... /usr/include/plist/cython
+checking for openssl... yes
+*** Note: OpenSSL support explicitly disabled ***
+checking for libgnutls... yes
+checking for gcry_control in -lgcrypt... yes
+checking for libtasn1... yes
+checking for supported compiler flags...  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for native large file support... yes
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking whether make supports nested variables... (cached) yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating common/Makefile
+config.status: creating src/Makefile
+config.status: creating src/libimobiledevice-1.0.pc
+config.status: creating include/Makefile
+config.status: creating tools/Makefile
+config.status: creating cython/Makefile
+config.status: creating docs/Makefile
+config.status: creating doxygen.cfg
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+configure: WARNING: unrecognized options: --disable-maintainer-mode, --enable-dev-tools
+
+Configuration for libimobiledevice 1.2.1:
+-------------------------------------------
+
+  Install prefix: .........: /usr
+  Debug code ..............: no
+  Python bindings .........: yes
+  SSL support backend .....: GnuTLS
+
+  Now type 'make' to build libimobiledevice 1.2.1,
+  and then 'make install' for installation.
+
+make[1]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+   dh_auto_build -O--dbgsym-migration=libimobiledevice6-dbg
+	make -j4
+make[1]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+make  all-recursive
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+Making all in common
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/common'
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden   -I/usr/include/p11-kit-1   -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o socket.lo socket.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden   -I/usr/include/p11-kit-1   -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o thread.lo thread.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden   -I/usr/include/p11-kit-1   -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o debug.lo debug.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden   -I/usr/include/p11-kit-1   -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o userpref.lo userpref.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c socket.c  -fPIC -DPIC -o .libs/socket.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c thread.c  -fPIC -DPIC -o .libs/thread.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c debug.c  -fPIC -DPIC -o .libs/debug.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c thread.c -o thread.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c userpref.c  -fPIC -DPIC -o .libs/userpref.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c debug.c -o debug.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden   -I/usr/include/p11-kit-1   -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o utils.lo utils.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c socket.c -o socket.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c utils.c  -fPIC -DPIC -o .libs/utils.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c userpref.c -o userpref.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c utils.c -o utils.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden   -I/usr/include/p11-kit-1   -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -lusbmuxd -lplist  -no-undefined -Wl,-z,relro -Wl,--as-needed -o libinternalcommon.la  socket.lo thread.lo debug.lo userpref.lo utils.lo  
+libtool: link: ar cru .libs/libinternalcommon.a .libs/socket.o .libs/thread.o .libs/debug.o .libs/userpref.o .libs/utils.o 
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libinternalcommon.a
+libtool: link: ( cd ".libs" && rm -f "libinternalcommon.la" && ln -s "../libinternalcommon.la" "libinternalcommon.la" )
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/common'
+Making all in src
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/src'
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevice.lo idevice.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o service.lo service.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o property_list_service.lo property_list_service.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o device_link_service.lo device_link_service.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c service.c  -fPIC -DPIC -o .libs/service.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c idevice.c  -fPIC -DPIC -o .libs/idevice.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c device_link_service.c  -fPIC -DPIC -o .libs/device_link_service.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c property_list_service.c  -fPIC -DPIC -o .libs/property_list_service.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c service.c -o service.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c property_list_service.c -o property_list_service.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c device_link_service.c -o device_link_service.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o lockdown.lo lockdown.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c idevice.c -o idevice.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o afc.lo afc.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c lockdown.c  -fPIC -DPIC -o .libs/lockdown.o
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o file_relay.lo file_relay.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c afc.c  -fPIC -DPIC -o .libs/afc.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c file_relay.c  -fPIC -DPIC -o .libs/file_relay.o
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o notification_proxy.lo notification_proxy.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c file_relay.c -o file_relay.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c notification_proxy.c  -fPIC -DPIC -o .libs/notification_proxy.o
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o installation_proxy.lo installation_proxy.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c notification_proxy.c -o notification_proxy.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c installation_proxy.c  -fPIC -DPIC -o .libs/installation_proxy.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c lockdown.c -o lockdown.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c afc.c -o afc.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o sbservices.lo sbservices.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c sbservices.c  -fPIC -DPIC -o .libs/sbservices.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c sbservices.c -o sbservices.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c installation_proxy.c -o installation_proxy.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o mobile_image_mounter.lo mobile_image_mounter.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o screenshotr.lo screenshotr.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o mobilesync.lo mobilesync.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c mobile_image_mounter.c  -fPIC -DPIC -o .libs/mobile_image_mounter.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c screenshotr.c  -fPIC -DPIC -o .libs/screenshotr.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c mobilesync.c  -fPIC -DPIC -o .libs/mobilesync.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c screenshotr.c -o screenshotr.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c mobile_image_mounter.c -o mobile_image_mounter.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o mobilebackup.lo mobilebackup.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o house_arrest.lo house_arrest.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c mobilebackup.c  -fPIC -DPIC -o .libs/mobilebackup.o
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o mobilebackup2.lo mobilebackup2.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c mobilesync.c -o mobilesync.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c house_arrest.c  -fPIC -DPIC -o .libs/house_arrest.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c mobilebackup2.c  -fPIC -DPIC -o .libs/mobilebackup2.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c mobilebackup.c -o mobilebackup.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c house_arrest.c -o house_arrest.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c mobilebackup2.c -o mobilebackup2.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o misagent.lo misagent.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o restore.lo restore.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o diagnostics_relay.lo diagnostics_relay.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c misagent.c  -fPIC -DPIC -o .libs/misagent.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c restore.c  -fPIC -DPIC -o .libs/restore.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c diagnostics_relay.c  -fPIC -DPIC -o .libs/diagnostics_relay.o
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o heartbeat.lo heartbeat.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c misagent.c -o misagent.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c heartbeat.c  -fPIC -DPIC -o .libs/heartbeat.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c restore.c -o restore.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c diagnostics_relay.c -o diagnostics_relay.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c heartbeat.c -o heartbeat.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o debugserver.lo debugserver.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o webinspector.lo webinspector.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c debugserver.c  -fPIC -DPIC -o .libs/debugserver.o
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o mobileactivation.lo mobileactivation.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o syslog_relay.lo syslog_relay.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c webinspector.c  -fPIC -DPIC -o .libs/webinspector.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c mobileactivation.c  -fPIC -DPIC -o .libs/mobileactivation.o
+mobileactivation.c: In function ‘mobileactivation_send_command’:
+mobileactivation.c:129:27: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+  mobileactivation_error_t ret = MOBILEACTIVATION_E_UNKNOWN_ERROR;
+                           ^~~
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c syslog_relay.c  -fPIC -DPIC -o .libs/syslog_relay.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c webinspector.c -o webinspector.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c mobileactivation.c -o mobileactivation.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c syslog_relay.c -o syslog_relay.o >/dev/null 2>&1
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c debugserver.c -o debugserver.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden  -I/usr/include/p11-kit-1   -D_LARGE_FILES=1  -pthread -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -lgnutls -ltasn1 -lplist -lusbmuxd -lgcrypt -lssl -lcrypto  -version-info 6:0:0 -no-undefined  -Wl,-z,relro -Wl,--as-needed -o libimobiledevice.la -rpath /usr/lib/x86_64-linux-gnu idevice.lo service.lo property_list_service.lo device_link_service.lo lockdown.lo afc.lo file_relay.lo notification_proxy.lo installation_proxy.lo sbservices.lo mobile_image_mounter.lo screenshotr.lo mobilesync.lo mobilebackup.lo house_arrest.lo mobilebackup2.lo misagent.lo restore.lo diagnostics_relay.lo heartbeat.lo debugserver.lo webinspector.lo mobileactivation.lo syslog_relay.lo ../common/libinternalcommon.la  
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/idevice.o .libs/service.o .libs/property_list_service.o .libs/device_link_service.o .libs/lockdown.o .libs/afc.o .libs/file_relay.o .libs/notification_proxy.o .libs/installation_proxy.o .libs/sbservices.o .libs/mobile_image_mounter.o .libs/screenshotr.o .libs/mobilesync.o .libs/mobilebackup.o .libs/house_arrest.o .libs/mobilebackup2.o .libs/misagent.o .libs/restore.o .libs/diagnostics_relay.o .libs/heartbeat.o .libs/debugserver.o .libs/webinspector.o .libs/mobileactivation.o .libs/syslog_relay.o  -Wl,--whole-archive ../common/.libs/libinternalcommon.a -Wl,--no-whole-archive  -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lusbmuxd -lplist  -pthread -g -O2 -fstack-protector-strong -Wl,-z -Wl,relro -Wl,--as-needed   -pthread -Wl,-soname -Wl,libimobiledevice.so.6 -o .libs/libimobiledevice.so.6.0.0
+libtool: link: (cd ".libs" && rm -f "libimobiledevice.so.6" && ln -s "libimobiledevice.so.6.0.0" "libimobiledevice.so.6")
+libtool: link: (cd ".libs" && rm -f "libimobiledevice.so" && ln -s "libimobiledevice.so.6.0.0" "libimobiledevice.so")
+libtool: link: (cd .libs/libimobiledevice.lax/libinternalcommon.a && ar x "/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/src/../common/.libs/libinternalcommon.a")
+libtool: link: ar cru .libs/libimobiledevice.a  idevice.o service.o property_list_service.o device_link_service.o lockdown.o afc.o file_relay.o notification_proxy.o installation_proxy.o sbservices.o mobile_image_mounter.o screenshotr.o mobilesync.o mobilebackup.o house_arrest.o mobilebackup2.o misagent.o restore.o diagnostics_relay.o heartbeat.o debugserver.o webinspector.o mobileactivation.o syslog_relay.o  .libs/libimobiledevice.lax/libinternalcommon.a/debug.o .libs/libimobiledevice.lax/libinternalcommon.a/socket.o .libs/libimobiledevice.lax/libinternalcommon.a/thread.o .libs/libimobiledevice.lax/libinternalcommon.a/userpref.o .libs/libimobiledevice.lax/libinternalcommon.a/utils.o 
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libimobiledevice.a
+libtool: link: rm -fr .libs/libimobiledevice.lax
+libtool: link: ( cd ".libs" && rm -f "libimobiledevice.la" && ln -s "../libimobiledevice.la" "libimobiledevice.la" )
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/src'
+Making all in include
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/include'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/include'
+Making all in cython
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+/usr/bin/cython -I/usr/include/plist/cython -I../src -o imobiledevice.c imobiledevice.pyx
+warning: imobiledevice.pxd:6:4: Exception already a builtin Cython type
+make  all-am
+make[4]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -I../include  -I../include -I../src -I/usr/include/python2.7 -I/usr/include/x86_64-linux-gnu/python2.7 -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1    -D_LARGE_FILES=1 -Wno-shadow -Wno-redundant-decls -Wno-switch-default -Wno-strict-aliasing -Wno-implicit-function-declaration -fvisibility=default -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o imobiledevice_la-imobiledevice.lo `test -f 'imobiledevice.c' || echo './'`imobiledevice.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I../include -I../src -I/usr/include/python2.7 -I/usr/include/x86_64-linux-gnu/python2.7 -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -Wno-shadow -Wno-redundant-decls -Wno-switch-default -Wno-strict-aliasing -Wno-implicit-function-declaration -fvisibility=default -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c imobiledevice.c  -fPIC -DPIC -o .libs/imobiledevice_la-imobiledevice.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -I../include -I../include -I../src -I/usr/include/python2.7 -I/usr/include/x86_64-linux-gnu/python2.7 -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -Wno-shadow -Wno-redundant-decls -Wno-switch-default -Wno-strict-aliasing -Wno-implicit-function-declaration -fvisibility=default -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c imobiledevice.c -o imobiledevice_la-imobiledevice.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -I../include -I../src -I/usr/include/python2.7 -I/usr/include/x86_64-linux-gnu/python2.7 -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1    -D_LARGE_FILES=1 -Wno-shadow -Wno-redundant-decls -Wno-switch-default -Wno-strict-aliasing -Wno-implicit-function-declaration -fvisibility=default -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -module -avoid-version -L/usr/lib/x86_64-linux-gnu -L/usr/lib/python2.7/config-x86_64-linux-gnu -L/usr/lib -lpython2.7 -lpthread -ldl  -lutil -lm  -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions -lgnutls -ltasn1 -lssl -lcrypto -lplist -no-undefined -Wl,-z,relro -Wl,--as-needed -o imobiledevice.la -rpath /usr/lib/python2.7/dist-packages imobiledevice_la-imobiledevice.lo ../src/libimobiledevice.la 
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/imobiledevice_la-imobiledevice.o   -Wl,-rpath -Wl,/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/src/.libs -L/usr/lib/x86_64-linux-gnu -L/usr/lib/python2.7/config-x86_64-linux-gnu -L/usr/lib -lpython2.7 -lpthread -ldl -lutil -lm -lgnutls -ltasn1 -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so  -g -O2 -fstack-protector-strong -Wl,-export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-z -Wl,relro -Wl,--as-needed   -pthread -Wl,-soname -Wl,imobiledevice.so -o .libs/imobiledevice.so
+libtool: link: ar cru .libs/imobiledevice.a  imobiledevice_la-imobiledevice.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/imobiledevice.a
+libtool: link: ( cd ".libs" && rm -f "imobiledevice.la" && ln -s "../imobiledevice.la" "imobiledevice.la" )
+make[4]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+Making all in tools
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/tools'
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevice_id-idevice_id.o `test -f 'idevice_id.c' || echo './'`idevice_id.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o ideviceinfo-ideviceinfo.o `test -f 'ideviceinfo.c' || echo './'`ideviceinfo.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicename-idevicename.o `test -f 'idevicename.c' || echo './'`idevicename.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicepair-idevicepair.o `test -f 'idevicepair.c' || echo './'`idevicepair.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicesyslog-idevicesyslog.o `test -f 'idevicesyslog.c' || echo './'`idevicesyslog.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o ideviceimagemounter-ideviceimagemounter.o `test -f 'ideviceimagemounter.c' || echo './'`ideviceimagemounter.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicescreenshot-idevicescreenshot.o `test -f 'idevicescreenshot.c' || echo './'`idevicescreenshot.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o ideviceenterrecovery-ideviceenterrecovery.o `test -f 'ideviceenterrecovery.c' || echo './'`ideviceenterrecovery.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicedate-idevicedate.o `test -f 'idevicedate.c' || echo './'`idevicedate.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicebackup-idevicebackup.o `test -f 'idevicebackup.c' || echo './'`idevicebackup.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicebackup2-idevicebackup2.o `test -f 'idevicebackup2.c' || echo './'`idevicebackup2.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o ideviceprovision-ideviceprovision.o `test -f 'ideviceprovision.c' || echo './'`ideviceprovision.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicedebugserverproxy-idevicedebugserverproxy.o `test -f 'idevicedebugserverproxy.c' || echo './'`idevicedebugserverproxy.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicediagnostics-idevicediagnostics.o `test -f 'idevicediagnostics.c' || echo './'`idevicediagnostics.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicedebug-idevicedebug.o `test -f 'idevicedebug.c' || echo './'`idevicedebug.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicenotificationproxy-idevicenotificationproxy.o `test -f 'idevicenotificationproxy.c' || echo './'`idevicenotificationproxy.c
+gcc -DHAVE_CONFIG_H -I. -I..  -I../include -I..  -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -c -o idevicecrashreport-idevicecrashreport.o `test -f 'idevicecrashreport.c' || echo './'`idevicecrashreport.c
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevice_id idevice_id-idevice_id.o ../src/libimobiledevice.la 
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security ../common/libinternalcommon.la -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o ideviceinfo ideviceinfo-ideviceinfo.o ../src/libimobiledevice.la 
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevice_id idevice_id-idevice_id.o  -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevicename idevicename-idevicename.o ../src/libimobiledevice.la 
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security ../common/libinternalcommon.la -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -lusbmuxd -Wl,-z,relro -Wl,--as-needed -o idevicepair idevicepair-idevicepair.o ../src/libimobiledevice.la 
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/ideviceinfo ideviceinfo-ideviceinfo.o  ../common/.libs/libinternalcommon.a -lusbmuxd -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicename idevicename-idevicename.o  -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevicesyslog idevicesyslog-idevicesyslog.o ../src/libimobiledevice.la 
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security ../common/libinternalcommon.la -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o ideviceimagemounter ideviceimagemounter-ideviceimagemounter.o ../src/libimobiledevice.la 
+libtool: link: gcc -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicepair idevicepair-idevicepair.o  ../common/.libs/libinternalcommon.a -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -lusbmuxd ../src/.libs/libimobiledevice.so -pthread
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevicescreenshot idevicescreenshot-idevicescreenshot.o ../src/libimobiledevice.la 
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicesyslog idevicesyslog-idevicesyslog.o  -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o ideviceenterrecovery ideviceenterrecovery-ideviceenterrecovery.o ../src/libimobiledevice.la 
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevicedate idevicedate-idevicedate.o ../src/libimobiledevice.la 
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/ideviceimagemounter ideviceimagemounter-ideviceimagemounter.o  ../common/.libs/libinternalcommon.a -lusbmuxd -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicescreenshot idevicescreenshot-idevicescreenshot.o  -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security ../common/libinternalcommon.la -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevicebackup idevicebackup-idevicebackup.o ../src/libimobiledevice.la 
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/ideviceenterrecovery ideviceenterrecovery-ideviceenterrecovery.o  -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicedate idevicedate-idevicedate.o  -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security ../common/libinternalcommon.la -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevicebackup2 idevicebackup2-idevicebackup2.o ../src/libimobiledevice.la 
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security ../common/libinternalcommon.la -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o ideviceprovision ideviceprovision-ideviceprovision.o ../src/libimobiledevice.la 
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security ../common/libinternalcommon.la -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevicedebugserverproxy idevicedebugserverproxy-idevicedebugserverproxy.o ../src/libimobiledevice.la 
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicebackup idevicebackup-idevicebackup.o  ../common/.libs/libinternalcommon.a -lusbmuxd -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/ideviceprovision ideviceprovision-ideviceprovision.o  ../common/.libs/libinternalcommon.a -lusbmuxd -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicebackup2 idevicebackup2-idevicebackup2.o  ../common/.libs/libinternalcommon.a -lusbmuxd -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevicediagnostics idevicediagnostics-idevicediagnostics.o ../src/libimobiledevice.la 
+libtool: link: gcc -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicedebugserverproxy idevicedebugserverproxy-idevicedebugserverproxy.o  ../common/.libs/libinternalcommon.a -lusbmuxd -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security ../common/libinternalcommon.la -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevicedebug idevicedebug-idevicedebug.o ../src/libimobiledevice.la 
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevicenotificationproxy idevicenotificationproxy-idevicenotificationproxy.o ../src/libimobiledevice.la 
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1     -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security ../common/libinternalcommon.la -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist -Wl,-z,relro -Wl,--as-needed -o idevicecrashreport idevicecrashreport-idevicecrashreport.o ../src/libimobiledevice.la 
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicediagnostics idevicediagnostics-idevicediagnostics.o  -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicedebug idevicedebug-idevicedebug.o  ../common/.libs/libinternalcommon.a -lusbmuxd -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+libtool: link: gcc -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicenotificationproxy idevicenotificationproxy-idevicenotificationproxy.o  -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+libtool: link: gcc -I.. -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -Wl,--as-needed -o .libs/idevicecrashreport idevicecrashreport-idevicecrashreport.o  ../common/.libs/libinternalcommon.a -lusbmuxd -lgnutls -ltasn1 -lgcrypt -lssl -lcrypto -lplist ../src/.libs/libimobiledevice.so -pthread
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/tools'
+Making all in docs
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/docs'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/docs'
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+make[1]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+   dh_auto_test -O--dbgsym-migration=libimobiledevice6-dbg
+	make -j4 check VERBOSE=1
+make[1]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+Making check in common
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/common'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/common'
+Making check in src
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/src'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/src'
+Making check in include
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/include'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/include'
+Making check in cython
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+make  check-am
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+Making check in tools
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/tools'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/tools'
+Making check in docs
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/docs'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/docs'
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+make[1]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary --with=python2 --dbgsym-migration=libimobiledevice6-dbg
+   dh_testroot -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_prep -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_auto_install -O--dbgsym-migration=libimobiledevice6-dbg
+	make -j4 install DESTDIR=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+Making install in common
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/common'
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/common'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/common'
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/common'
+Making install in src
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/src'
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/src'
+ /bin/mkdir -p '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu'
+ /bin/mkdir -p '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libimobiledevice.la '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu'
+ /usr/bin/install -c -m 644 libimobiledevice-1.0.pc '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig'
+libtool: install: /usr/bin/install -c .libs/libimobiledevice.so.6.0.0 /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu/libimobiledevice.so.6.0.0
+libtool: install: (cd /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libimobiledevice.so.6.0.0 libimobiledevice.so.6 || { rm -f libimobiledevice.so.6 && ln -s libimobiledevice.so.6.0.0 libimobiledevice.so.6; }; })
+libtool: install: (cd /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libimobiledevice.so.6.0.0 libimobiledevice.so || { rm -f libimobiledevice.so && ln -s libimobiledevice.so.6.0.0 libimobiledevice.so; }; })
+libtool: install: /usr/bin/install -c .libs/libimobiledevice.lai /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu/libimobiledevice.la
+libtool: install: /usr/bin/install -c .libs/libimobiledevice.a /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu/libimobiledevice.a
+libtool: install: chmod 644 /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu/libimobiledevice.a
+libtool: install: ranlib /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu/libimobiledevice.a
+libtool: warning: remember to run 'libtool --finish /usr/lib/x86_64-linux-gnu'
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/src'
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/src'
+Making install in include
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/include'
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/include'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/include'
+ /bin/mkdir -p '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/include/libimobiledevice'
+ /usr/bin/install -c -m 644  libimobiledevice/libimobiledevice.h libimobiledevice/lockdown.h libimobiledevice/afc.h libimobiledevice/file_relay.h libimobiledevice/notification_proxy.h libimobiledevice/installation_proxy.h libimobiledevice/sbservices.h libimobiledevice/mobile_image_mounter.h libimobiledevice/screenshotr.h libimobiledevice/mobilesync.h libimobiledevice/mobilebackup.h libimobiledevice/house_arrest.h libimobiledevice/mobilebackup2.h libimobiledevice/misagent.h libimobiledevice/restore.h libimobiledevice/webinspector.h libimobiledevice/heartbeat.h libimobiledevice/diagnostics_relay.h libimobiledevice/debugserver.h libimobiledevice/syslog_relay.h libimobiledevice/mobileactivation.h libimobiledevice/property_list_service.h libimobiledevice/service.h '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/include/libimobiledevice'
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/include'
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/include'
+Making install in cython
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+make  install-am
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+make[4]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/python2.7/dist-packages'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   imobiledevice.la '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/python2.7/dist-packages'
+libtool: warning: relinking 'imobiledevice.la'
+libtool: install: (cd /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython; /bin/bash "/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/libtool"  --tag CC --mode=relink gcc -I../include -I../src -I/usr/include/python2.7 -I/usr/include/x86_64-linux-gnu/python2.7 -Wall -Wextra -Wmissing-declarations -Wredundant-decls -Wshadow -Wpointer-arith -Wwrite-strings -Wswitch-default -Wno-unused-parameter -fsigned-char -fvisibility=hidden -I/usr/include/p11-kit-1 -D_LARGE_FILES=1 -Wno-shadow -Wno-redundant-decls -Wno-switch-default -Wno-strict-aliasing -Wno-implicit-function-declaration -fvisibility=default -g -O2 -fdebug-prefix-map=/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1=. -fstack-protector-strong -Wformat -Werror=format-security -module -avoid-version -L/usr/lib/x86_64-linux-gnu -L/usr/lib/python2.7/config-x86_64-linux-gnu -L/usr/lib -lpython2.7 -lpthread -ldl -lutil -lm -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions -lgnutls -ltasn1 -lssl -lcrypto -lplist -no-undefined -Wl,-z,relro -Wl,--as-needed -o imobiledevice.la -rpath /usr/lib/python2.7/dist-packages imobiledevice_la-imobiledevice.lo ../src/libimobiledevice.la -inst-prefix-dir /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp)
+libtool: relink: gcc -shared  -fPIC -DPIC  .libs/imobiledevice_la-imobiledevice.o   -L/usr/lib/x86_64-linux-gnu -L/usr/lib/python2.7/config-x86_64-linux-gnu -L/usr/lib -lpython2.7 -lpthread -ldl -lutil -lm -lgnutls -ltasn1 -lssl -lcrypto -lplist -L/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/x86_64-linux-gnu -limobiledevice  -g -O2 -fstack-protector-strong -Wl,-export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-z -Wl,relro -Wl,--as-needed   -pthread -Wl,-soname -Wl,imobiledevice.so -o .libs/imobiledevice.so
+libtool: install: /usr/bin/install -c .libs/imobiledevice.soT /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/python2.7/dist-packages/imobiledevice.so
+libtool: install: /usr/bin/install -c .libs/imobiledevice.lai /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/python2.7/dist-packages/imobiledevice.la
+libtool: install: /usr/bin/install -c .libs/imobiledevice.a /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/python2.7/dist-packages/imobiledevice.a
+libtool: install: chmod 644 /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/python2.7/dist-packages/imobiledevice.a
+libtool: install: ranlib /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/python2.7/dist-packages/imobiledevice.a
+libtool: warning: remember to run 'libtool --finish /usr/lib/python2.7/dist-packages'
+make[4]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/cython'
+Making install in tools
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/tools'
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/tools'
+make[3]: Nothing to be done for 'install-data-am'.
+ /bin/mkdir -p '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin'
+  /bin/bash ../libtool   --mode=install /usr/bin/install -c idevice_id ideviceinfo idevicename idevicepair idevicesyslog ideviceimagemounter idevicescreenshot ideviceenterrecovery idevicedate idevicebackup idevicebackup2 ideviceprovision idevicedebugserverproxy idevicediagnostics idevicedebug idevicenotificationproxy idevicecrashreport '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin'
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevice_id /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevice_id
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/ideviceinfo /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/ideviceinfo
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicename /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicename
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicepair /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicepair
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicesyslog /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicesyslog
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/ideviceimagemounter /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/ideviceimagemounter
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicescreenshot /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicescreenshot
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/ideviceenterrecovery /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/ideviceenterrecovery
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicedate /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicedate
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicebackup /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicebackup
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicebackup2 /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicebackup2
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/ideviceprovision /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/ideviceprovision
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicedebugserverproxy /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicedebugserverproxy
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicediagnostics /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicediagnostics
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicedebug /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicedebug
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicenotificationproxy /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicenotificationproxy
+libtool: warning: '../src/libimobiledevice.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install -c .libs/idevicecrashreport /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/bin/idevicecrashreport
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/tools'
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/tools'
+Making install in docs
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/docs'
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/docs'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/share/man/man1'
+ /usr/bin/install -c -m 644 idevice_id.1 ideviceinfo.1 idevicesyslog.1 idevicebackup.1 idevicebackup2.1 ideviceimagemounter.1 idevicescreenshot.1 idevicepair.1 ideviceenterrecovery.1 idevicedate.1 ideviceprovision.1 idevicedebugserverproxy.1 idevicediagnostics.1 idevicecrashreport.1 idevicename.1 idevicedebug.1 idevicenotificationproxy.1 '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/share/man/man1'
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/docs'
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/docs'
+make[2]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+make[3]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+make[2]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+make[1]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+   debian/rules override_dh_install
+make[1]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+#Remove .la files.
+rm -rf /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/*/*.la
+rm -rf /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/python*/*-packages/imobiledevice/*.la
+rm -rf /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/lib/python*/*-packages/*.la
+#Remove .a files from python bindings.
+rm -rf /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp//usr/lib/python*/dist-packages/imobiledevice/*.a
+rm -rf /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp//usr/lib/python*/dist-packages/*.a
+#Remove installed man pages, installed by *.manpages
+rm -f /home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1/debian/tmp/usr/share/man/man1/*.1
+dh_install --fail-missing
+make[1]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+   dh_installdocs -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_installchangelogs -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_installman -O--dbgsym-migration=libimobiledevice6-dbg
+   debian/rules override_dh_python2
+make[1]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+# Only build for the current version of python, not all supported.
+dh_python2 --no-guessing-versions
+I: dh_python2 fs:322: renaming imobiledevice.so to imobiledevice.x86_64-linux-gnu.so
+W: dh_python2 dh_python2:67: public extension linked with libpython2.7: imobiledevice.x86_64-linux-gnu.so
+make[1]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+   dh_perl -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_link -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_strip_nondeterminism -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_compress -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_fixperms -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_strip -O--dbgsym-migration=libimobiledevice6-dbg
+   debian/rules override_dh_makeshlibs
+make[1]: Entering directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+dh_makeshlibs -- -c4
+make[1]: Leaving directory '/home/maikel/code/libimobiledevice-debian-build/libimobiledevice-1.2.1'
+   dh_shlibdeps -O--dbgsym-migration=libimobiledevice6-dbg
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libimobiledevice6/usr/lib/x86_64-linux-gnu/libimobiledevice.so.6.0.0 was not linked against libssl.so.1.0.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libimobiledevice6/usr/lib/x86_64-linux-gnu/libimobiledevice.so.6.0.0 was not linked against libcrypto.so.1.0.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python-imobiledevice/usr/lib/python2.7/dist-packages/imobiledevice.x86_64-linux-gnu.so was not linked against libutil.so.1 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python-imobiledevice/usr/lib/python2.7/dist-packages/imobiledevice.x86_64-linux-gnu.so was not linked against libtasn1.so.6 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python-imobiledevice/usr/lib/python2.7/dist-packages/imobiledevice.x86_64-linux-gnu.so was not linked against libcrypto.so.1.0.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python-imobiledevice/usr/lib/python2.7/dist-packages/imobiledevice.x86_64-linux-gnu.so was not linked against libm.so.6 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python-imobiledevice/usr/lib/python2.7/dist-packages/imobiledevice.x86_64-linux-gnu.so was not linked against libgnutls.so.30 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python-imobiledevice/usr/lib/python2.7/dist-packages/imobiledevice.x86_64-linux-gnu.so was not linked against libssl.so.1.0.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python-imobiledevice/usr/lib/python2.7/dist-packages/imobiledevice.x86_64-linux-gnu.so was not linked against libdl.so.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python-imobiledevice/usr/lib/python2.7/dist-packages/imobiledevice.x86_64-linux-gnu.so was not linked against libpthread.so.0 (it uses none of the library's symbols)
+   dh_installdeb -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_gencontrol -O--dbgsym-migration=libimobiledevice6-dbg
+dpkg-gencontrol: warning: package python-imobiledevice: unused substitution variable ${python:Versions}
+dpkg-gencontrol: warning: package python-imobiledevice: unused substitution variable ${python:Versions}
+   dh_md5sums -O--dbgsym-migration=libimobiledevice6-dbg
+   dh_builddeb -O--dbgsym-migration=libimobiledevice6-dbg
+dpkg-deb: building package 'libimobiledevice-dev' in '../libimobiledevice-dev_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb'.
+dpkg-deb: building package 'libimobiledevice-utils-dbgsym' in '../libimobiledevice-utils-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb'.
+dpkg-deb: building package 'python-imobiledevice-dbgsym' in '../python-imobiledevice-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb'.
+dpkg-deb: building package 'libimobiledevice6-dbgsym' in '../libimobiledevice6-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb'.
+dpkg-deb: building package 'libimobiledevice6' in '../libimobiledevice6_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb'.
+dpkg-deb: building package 'libimobiledevice-doc' in '../libimobiledevice-doc_1.2.1~git20171128.5a854327+dfsg-0.1_all.deb'.
+dpkg-deb: building package 'libimobiledevice-utils' in '../libimobiledevice-utils_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb'.
+dpkg-deb: building package 'python-imobiledevice' in '../python-imobiledevice_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../libimobiledevice_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build libimobiledevice-1.2.1
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian...
+W: python-imobiledevice-dbgsym: package-has-long-file-name 73 (82) > 80
+W: libimobiledevice-utils: binary-without-manpage usr/bin/idevicenotificationproxy
+W: libimobiledevice-utils-dbgsym: package-has-long-file-name 75 (84) > 80
+Finished running lintian.

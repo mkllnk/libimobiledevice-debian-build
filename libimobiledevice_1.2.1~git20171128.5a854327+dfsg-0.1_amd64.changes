@@ -1,0 +1,67 @@
+Format: 1.8
+Date: Wed, 06 Dec 2017 13:57:36 +0100
+Source: libimobiledevice
+Binary: libimobiledevice6 libimobiledevice-dev python-imobiledevice libimobiledevice-utils libimobiledevice-doc
+Architecture: amd64 all
+Version: 1.2.1~git20171128.5a854327+dfsg-0.1
+Distribution: unstable
+Urgency: medium
+Maintainer: gtkpod Maintainers <pkg-gtkpod-devel@lists.alioth.debian.org>
+Changed-By: Yves-Alexis Perez <corsac@debian.org>
+Description:
+ libimobiledevice-dev - Library for communicating with iPhone and iPod Touch devices
+ libimobiledevice-doc - Library for communicating with iPhone and iPod Touch devices
+ libimobiledevice-utils - Library for communicating with iPhone and iPod Touch devices
+ libimobiledevice6 - Library for communicating with the iPhone and iPod Touch
+ python-imobiledevice - Library for communicating with iPhone and iPod Touch devices
+Closes: 852860 881486
+Changes:
+ libimobiledevice (1.2.1~git20171128.5a854327+dfsg-0.1) unstable; urgency=medium
+ .
+   * Non-maintainer upload.
+   * New upstream snapshot 1.2.1~git20171128.5a854327+dfsg
+     - fix compatibility with iOS 11 (closes: #881486)
+     - fix installation_proxy when using GnuTLS (closes: #852860)
+   * Drop 02-fix-link-errors.patch
+   * Drop local-only-sockets.patch
+   * Drop gnutls-api-update.patch
+   * Drop fix-ssl-version-negotiation-for-newer-versions-of-openssl.diff
+   * Drop idevice-update-gnutls-code-to-support-ios-10.diff
+   * Drop userpref-gnutls-fix-pairing-record-generation...
+   * d/p/09_use_python_config removed
+   * update symbols for new release
+   * d/gbp.conf: update section name to buildpackage
+   * d/control: update standards version to 4.1.2
+   * d/control: make python-imobiledevice depend on python-plist
+     (closes: #881486)
+   * d/s/lintian-overrides: add override for menu.js long lines
+Checksums-Sha1:
+ 61bbb76c09274e26c38fcd561633f7cb8074601f 87034 libimobiledevice-dev_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ ae183cac5c4c1ed047a813c53be3b6214f4ae64e 91326 libimobiledevice-doc_1.2.1~git20171128.5a854327+dfsg-0.1_all.deb
+ d6f432aff310d7ba279b29a95e5b12b9f5029874 230944 libimobiledevice-utils-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ 9e5864b77dc78f4d67c53b814977e7eff1816e6f 91228 libimobiledevice-utils_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ 63915fa6f6b52a2d2711b05b586331bb2f400bfe 153402 libimobiledevice6-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ d6aa3e02ff4de92b463dee85e3b42be1ab4ba793 66780 libimobiledevice6_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ 01de7def9077db503286afb8773b39e507b05af6 9816 libimobiledevice_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.buildinfo
+ 9921d9dc2969035e05babfe8e085ba9eff0210f2 559064 python-imobiledevice-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ 276e1d8c31ec0c2539f0843f696a06692345f901 185544 python-imobiledevice_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+Checksums-Sha256:
+ 4a7621b286960d0a9f7e3bfa58a72e09af8a1fbee0d6a248649527d14ea0e97d 87034 libimobiledevice-dev_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ c92f5c6af5272e4b42812f0461405d5eaaba77634c7116e9f02ffff9c51bb09e 91326 libimobiledevice-doc_1.2.1~git20171128.5a854327+dfsg-0.1_all.deb
+ 25f65e8e5a7da41742c1683b6266411fdf827c791f07fcf7076789f7528c2572 230944 libimobiledevice-utils-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ f3949a71797a83ae170dca1819f2b7155a4f7c03d81a4a74b5a3b35e5a1e704c 91228 libimobiledevice-utils_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ 2274214ef81e0e09342c8f48356dc4ba00754b501c425a129e0a0c365e965221 153402 libimobiledevice6-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ ac636955142fa0df9b2bba1841f0fd9838aa10fdb1a52845e18860c145d5b507 66780 libimobiledevice6_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ ec36d653ab02866cbad27d52b2288273075b5700acd7d128220c618e77f113fa 9816 libimobiledevice_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.buildinfo
+ 02991015da9400c78371639d2c49cec32c1df2f93fc33b00743db54f44280592 559064 python-imobiledevice-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ 3e9e521b19d1bcc493722d1707246b5bdcdc2520893b5ec7fc51c5e6cd147c7e 185544 python-imobiledevice_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+Files:
+ a6322394b7b274f9facad3f6cbf05830 87034 libdevel optional libimobiledevice-dev_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ e03496e86918913654038f3263f1bd49 91326 doc optional libimobiledevice-doc_1.2.1~git20171128.5a854327+dfsg-0.1_all.deb
+ e985ea2ee66ca640cfc839f3dbfc5812 230944 debug extra libimobiledevice-utils-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ 7bef7b6d3fea62c5dab8292c9b378815 91228 utils optional libimobiledevice-utils_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ 27085dc2b94ef98dc9c8b40a8d1015bb 153402 debug extra libimobiledevice6-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ 4560f50e534871f8667a1399158e09d6 66780 libs optional libimobiledevice6_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ c72c6a3a44e6a7b2aa7f2c6cb55551ad 9816 libs optional libimobiledevice_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.buildinfo
+ f049f243d1c35a25cdadd48620680fee 559064 debug extra python-imobiledevice-dbgsym_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
+ 5ebe3f943469c71b31200db5aaa6450d 185544 python optional python-imobiledevice_1.2.1~git20171128.5a854327+dfsg-0.1_amd64.deb
